@@ -1,0 +1,19 @@
+{
+  "name": "pcap-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline classic PCAP + IPv4/UDP byte-boundary inspector (API & CLI)",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "fixtures": "npm run build && node dist/scripts/make-fixtures.js",
+    "test": "npm run build && node --test dist/test/pcap.test.js dist/test/store.test.js",
+    "start": "npm run build && node dist/src/cli.js serve",
+    "demo": "npm run build && node dist/scripts/demo.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}
